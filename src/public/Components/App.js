@@ -1,23 +1,19 @@
-import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-// import Search from "./Search";
+import * as ReactDOMClient from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Search from "./Search";
 
 const App = () => {
-  <div>
-    <Router>
-      <Switch>
-        <Route path="/search">
-          <Search />
-        </Route>
-      </Switch>
-    </Router>
-  </div>;
+  return (
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/search" element={<Search />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 };
 
-render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+const root = ReactDOMClient.createRoot(document.getElementById("root"));
+
+root.render(<App />);
