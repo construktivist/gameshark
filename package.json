@@ -21,6 +21,7 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.5",
     "@babel/preset-react": "^7.12.13",
+    "@parcel/babel-preset-env": "^2.4.1",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.22.1",
