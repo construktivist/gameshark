@@ -15,5 +15,4 @@ const App = () => {
 };
 
 const root = ReactDOMClient.createRoot(document.getElementById("root"));
-
 root.render(<App />);
