@@ -1,13 +1,28 @@
 const Results = ({games}) => {
     return (
         <div className="results">
-            {!games.length ? 
-                <h3>Sorry, we couldn't find anything that matched your search.</h3>
-                : 
-                games.map((game) => {
-                   return <h3 key={game.gameID}>{game.external}</h3>
-                })
-            }
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Deal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {!games.length ? 
+                    <h3>Sorry, we couldn't find anything that matched your search.</h3>
+                    : 
+                    games.map((game) => {
+                        return (
+                            <tr key={game.gameID}>
+                                <td>{game.external}</td>
+                                <td>{game.cheapest}</td>
+                            </tr>
+                        )    
+                    })
+                }
+                </tbody>
+            </table>
         </div>       
     )
 }

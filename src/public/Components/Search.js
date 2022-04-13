@@ -15,6 +15,7 @@ const Search = () => {
     );
     const json = await res.json();
     setGames(json);
+    console.log(json);
   }
 
   return (
