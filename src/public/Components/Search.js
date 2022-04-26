@@ -34,7 +34,7 @@ const Search = () => {
         ></input>
         <button>Submit</button>
       </form>
-      <Results games={games} />
+        <Results searchInputLength={searchInput.length} games={games} />
     </div>
   );
 };
