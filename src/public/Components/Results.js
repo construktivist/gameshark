@@ -1,7 +1,4 @@
 const Results = ({games, searchInputLength}) => {
-        //if games.length < 1 and searchInputLength < 1
-        // return empty div
-        //else 
         if (games.length < 1 && searchInputLength < 1) {
             return (
                 <div className="results"></div>
