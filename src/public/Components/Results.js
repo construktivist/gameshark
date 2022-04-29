@@ -23,6 +23,7 @@ const Results = ({games, searchInputLength}) => {
                                     <tr key={game.gameID}>
                                         <td>{game.external}</td>
                                         <td>{game.cheapest}</td>
+                                        <td><button onClick={e => {console.log(game.gameID)}}>See all deals</button></td>
                                     </tr>
                                     )    
                                 })}
