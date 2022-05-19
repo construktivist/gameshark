@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Results from './Results';
+import Results from "./Results";
 
 const Search = () => {
   const [searchInput, setSearch] = useState("");
-  const [games, setGames] = useState("");
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     requestGameDeals();
@@ -34,7 +34,7 @@ const Search = () => {
         ></input>
         <button>Submit</button>
       </form>
-        <Results searchInputLength={searchInput.length} games={games} />
+      <Results games={games}/>
     </div>
   );
 };
