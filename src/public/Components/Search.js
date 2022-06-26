@@ -5,10 +5,6 @@ const Search = () => {
   const [searchInput, setSearch] = useState("");
   const [games, setGames] = useState([]);
 
-  useEffect(() => {
-    requestGameDeals();
-  }, []);
-
   async function requestGameDeals() {
     const res = await fetch(
       `https://www.cheapshark.com/api/1.0/games?title=${searchInput}&limit=60&exact=0`
