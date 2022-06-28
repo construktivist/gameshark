@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Results from "./Results";
 
 const Search = () => {
@@ -30,7 +30,7 @@ const Search = () => {
         ></input>
         <button>Submit</button>
       </form>
-      <Results games={games}/>
+      <Results games={games} />
     </div>
   );
 };
