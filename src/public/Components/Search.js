@@ -5,7 +5,7 @@ const Search = () => {
   const [searchInput, setSearch] = useState("");
   const [games, setGames] = useState(null);
 
-  async function requestGameDeals() {
+  async function requestGameDealsByKeyword() {
     const res = await fetch(
       `https://www.cheapshark.com/api/1.0/games?title=${searchInput}&limit=60&exact=0`
     );
@@ -19,7 +19,7 @@ const Search = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          requestGameDeals();
+          requestGameDealsByKeyword();
         }}
       >
         <input

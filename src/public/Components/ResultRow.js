@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Accordion from "./Accordion"
 
 const ResultRow = ({ data }) => {
   const [plus, togglePlus] = useState("+");
@@ -21,12 +22,9 @@ const ResultRow = ({ data }) => {
         </button>
       </div>
       {show === true &&
-        <div>More deals</div>
+        <Accordion gameID={data.gameID} />
       }
     </div>
-
-
-
   );
 };
 
