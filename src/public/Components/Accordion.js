@@ -3,7 +3,11 @@ import {useState, useEffect } from 'react';
 
 const Accordion = ({gameID}) => {
 
-    const [deals, setDeals] = useState(null);
+    const [deals, setDeals] = useState([]);
+
+    useEffect(() => {
+        getGameDealsByGameID(gameID);
+    })
 
     async function getGameDealsByGameID(gameID) {
         const res = await fetch (
@@ -11,11 +15,20 @@ const Accordion = ({gameID}) => {
         )
         const json = await res.json();
         console.log(json);
-        setDeals(json);
+        setDeals(json.deals);
     }
 
     return (
-        <div>{deals}</div>
+        <table>
+            <tbody>
+                {deals.map(deal => {
+                    return <tr key={deal.storeID}>
+                        <td>{deal.storeID}</td>
+                        <td>{deal.price}</td>
+                    </tr>
+                })}
+            </tbody>
+        </table>
     )
 }
 

@@ -15,7 +15,7 @@ const Results = ({ games }) => {
         <h3>Name</h3><h3>Price</h3>
       </div>
       <div>
-        {games.map((game) => {
+        {games.map(game => {
           return <ResultRow key={game.gameID} data={game} />;
         })}
       </div>
