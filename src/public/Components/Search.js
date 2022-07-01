@@ -3,7 +3,7 @@ import Results from "./Results";
 
 const Search = () => {
   const [searchInput, setSearch] = useState("");
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState(null);
 
   async function requestGameDeals() {
     const res = await fetch(

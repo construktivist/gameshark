@@ -1,8 +1,13 @@
 import ResultRow from "./ResultRow";
 
 const Results = ({ games }) => {
-  if (games.length < 1) {
-    return <p className="no-results">Sorry, no results were found.</p>;
+  if (games === null) {
+    return null;
+  }
+  else if (games.length === 0) {
+    return (
+      <h3>Sorry! No results found.</h3>
+    )
   }
   return (
     <div className="results">
