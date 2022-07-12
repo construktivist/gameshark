@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Results from "./Results";
 
 const Search = () => {
   const [searchInput, setSearch] = useState("");
   const [games, setGames] = useState(null);
+  const [storeData, setStoreData] = useState([]);
+
+  useEffect(() => {
+    getStoreData();
+  }, [])
 
   async function requestGameDealsByKeyword() {
     const res = await fetch(
@@ -12,6 +17,15 @@ const Search = () => {
     const json = await res.json();
     setGames(json);
     console.log(json);
+  }
+
+  async function getStoreData() {
+    const res = await fetch(
+      `https://www.cheapshark.com/api/1.0/stores`
+    )
+    const json = await res.json();
+    console.log(json);
+    setStoreData(json);
   }
 
   return (
