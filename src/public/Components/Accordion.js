@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const Accordion = ({ gameID }) => {
   const [deals, setDeals] = useState([]);
-  
+
   useEffect(() => {
     getGameDealsByGameID(gameID);
   }, [gameID]);
