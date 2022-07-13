@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import StoreContext from "./StoreContext";
 
 const Accordion = ({ gameID }) => {
   const [deals, setDeals] = useState([]);
+  const [storeData] = useContext(StoreContext);
 
   useEffect(() => {
     getGameDealsByGameID(gameID);
