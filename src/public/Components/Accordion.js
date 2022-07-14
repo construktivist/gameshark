@@ -3,7 +3,7 @@ import StoreContext from "./StoreContext";
 
 const Accordion = ({ gameID }) => {
   const [deals, setDeals] = useState([]);
-  const [storeData] = useContext(StoreContext);
+  const [...storeData] = useContext(StoreContext);
 
   useEffect(() => {
     getGameDealsByGameID(gameID);
@@ -22,9 +22,10 @@ const Accordion = ({ gameID }) => {
     <table>
       <tbody>
         {deals.map((deal) => {
+          const index = deal.storeID - 1;
           return (
             <tr key={deal.storeID}>
-              <td>{deal.storeID}</td>
+              <td>{storeData[index].storeName}</td>
               <td>{deal.price}</td>
             </tr>
           );
