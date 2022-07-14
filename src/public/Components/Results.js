@@ -1,5 +1,7 @@
 import ResultRow from "./ResultRow";
 
+//Child component of Search.
+//This component onditionally renders the results based on the props.
 const Results = ({ games }) => {
   if (games === null) {
     return null;

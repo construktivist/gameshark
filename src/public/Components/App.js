@@ -7,12 +7,16 @@ import Search from "./Search";
 
 const App = () => {
 
+  //State
+  const [storeData, setStoreData] = useState({});
+
+  //Effect to fetch store data.
   useEffect(() => {
     requestStoreData();
   }, []);
 
-  const [storeData, setStoreData] = useState({});
-
+  //Fetch all store data.
+  //This is stored in StoreContext.
   async function requestStoreData() {
     const res = await fetch(`https://www.cheapshark.com/api/1.0/stores`);
     const json = await res.json();

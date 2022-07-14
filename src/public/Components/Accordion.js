@@ -1,14 +1,20 @@
 import { useState, useEffect, useContext } from "react";
 import StoreContext from "./StoreContext";
 
+//Child component of ResultRow.
+//This component expands to show all available deals by store.
 const Accordion = ({ gameID }) => {
+
+  //State
   const [deals, setDeals] = useState([]);
   const [...storeData] = useContext(StoreContext);
 
+  //Effect to fetch game deal data
   useEffect(() => {
     getGameDealsByGameID(gameID);
   }, [gameID]);
 
+  //Fetches game deals by the game ID.
   async function getGameDealsByGameID(gameID) {
     const res = await fetch(
       `https://www.cheapshark.com/api/1.0/games?id=${gameID}`
