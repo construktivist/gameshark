@@ -5,7 +5,6 @@ import Accordion from "./Accordion";
 //This component displays each game and the cheapest deal available.
 //This component also displays a button that expands it's child component Accordion.
 const ResultRow = ({ data }) => {
-
   //State
   const [plus, togglePlus] = useState("+");
   const [show, toggleShow] = useState(false);

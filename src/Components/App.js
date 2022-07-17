@@ -6,7 +6,6 @@ import AllStores from "./AllStores";
 import Search from "./Search";
 
 const App = () => {
-
   //State
   const [storeData, setStoreData] = useState({});
 
