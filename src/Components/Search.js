@@ -4,7 +4,6 @@ import Results from "./Results";
 //Child component of App.
 //Displays a form so users can search for deals by game title.
 const Search = () => {
-  
   //State
   const [searchInput, setSearch] = useState("");
   const [games, setGames] = useState(null);

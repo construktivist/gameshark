@@ -4,7 +4,6 @@ import StoreContext from "./StoreContext";
 //Child component of ResultRow.
 //This component expands to show all available deals by store.
 const Accordion = ({ gameID }) => {
-  
   //State
   const [deals, setDeals] = useState([]);
   const [...storeData] = useContext(StoreContext);
@@ -39,9 +38,10 @@ const Accordion = ({ gameID }) => {
                 <td>{deal.price}</td>
               </tr>
             );
-          }
-          else {
-            const store = storeData.find(store => store.storeID === dealStoreID);
+          } else {
+            const store = storeData.find(
+              (store) => store.storeID === dealStoreID
+            );
             const storeName = store.storeName;
             return (
               <tr key={deal.storeID}>
