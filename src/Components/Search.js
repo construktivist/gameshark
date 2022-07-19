@@ -20,20 +20,27 @@ const Search = () => {
   }
 
   return (
-    <div className="search-bar">
+    <div className="row py-5">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           requestGameDealsByKeyword();
         }}
       >
-        <input
-          id="search-input"
-          placeholder="Search"
-          value={searchInput}
-          onChange={(e) => setSearch(e.target.value)}
-        ></input>
-        <button>Submit</button>
+        <div className="col-sm-10 d-inline-block">
+          <label htmlFor="searchInput" className="visually-hidden">Search field</label>
+          <input
+            className="form-control"
+            id="searchInput"
+            title="Search field"
+            placeholder="Search"
+            value={searchInput}
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
+        </div>
+        <div className="col-sm-2 d-inline-block">
+          <button type="button" className="w-100 btn btn-dark">Submit</button>
+        </div>
       </form>
       <Results games={games} />
     </div>

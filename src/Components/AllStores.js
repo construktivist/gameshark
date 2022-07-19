@@ -1,5 +1,9 @@
 const AllStores = () => {
-  return <h1>All Stores</h1>;
+  return(
+    <div className="row py-5">
+        <h1>TOP DEALS BY STORE</h1>
+    </div>
+  )
 };
 
 export default AllStores;

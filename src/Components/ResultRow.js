@@ -10,20 +10,23 @@ const ResultRow = ({ data }) => {
   const [show, toggleShow] = useState(false);
 
   return (
-    <div>
-      <div>{data.external}</div>
-      <div>{data.cheapest}</div>
-      <div>
-        <button
-          onClick={() => {
-            togglePlus((plus) => (plus === "+" ? "-" : "+"));
-            toggleShow((show) => (show = !show));
-          }}
-        >
-          {plus}
-        </button>
+    <div className="card col-sm-4 d-flex flex-row">
+      <div className="card-body">
+        <div className="card-title">{data.external}</div>
+        <div className="card-text">{data.cheapest}</div>
+        <div>
+          <button
+            className="btn btn-dark"
+            onClick={() => {
+              togglePlus((plus) => (plus === "+" ? "-" : "+"));
+              toggleShow((show) => (show = !show));
+            }}
+          >
+            {plus}
+          </button>
+        </div>
+        {show === true && <Accordion gameID={data.gameID} />}
       </div>
-      {show === true && <Accordion gameID={data.gameID} />}
     </div>
   );
 };

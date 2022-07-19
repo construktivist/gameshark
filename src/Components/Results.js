@@ -6,15 +6,11 @@ const Results = ({ games }) => {
   if (games === null) {
     return null;
   } else if (games.length === 0) {
-    return <h3>Sorry! No results found.</h3>;
+    return <h3 className="py-2">Sorry! No results found.</h3>;
   }
   return (
-    <div className="results">
-      <div>
-        <h3>Name</h3>
-        <h3>Price</h3>
-      </div>
-      <div>
+    <div className="row py-5">
+      <div className="row">
         {games.map((game) => {
           return <ResultRow key={game.gameID} data={game} />;
         })}

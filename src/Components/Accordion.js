@@ -24,18 +24,17 @@ const Accordion = ({ gameID }) => {
   }
 
   return (
-    <table>
+    <table className="table table-dark w-50">
       <tbody>
         {deals.map((deal) => {
           const dealStoreID = deal.storeID;
           const indexedStoreID = storeData[dealStoreID - 1].storeID;
-          console.log(dealStoreID);
           if (dealStoreID === indexedStoreID) {
             const storeName = storeData[dealStoreID - 1].storeName;
             return (
               <tr key={deal.storeID}>
                 <td>{storeName}</td>
-                <td>{deal.price}</td>
+                <td className="text-right">{deal.price}</td>
               </tr>
             );
           } else {
@@ -46,7 +45,7 @@ const Accordion = ({ gameID }) => {
             return (
               <tr key={deal.storeID}>
                 <td>{storeName}</td>
-                <td>{deal.price}</td>
+                <td className="text-right">{deal.price}</td>
               </tr>
             );
           }
