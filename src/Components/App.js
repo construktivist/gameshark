@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StoreContext from "./StoreContext";
 import AllStores from "./AllStores";
 import Search from "./Search";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   //State

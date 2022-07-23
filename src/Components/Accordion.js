@@ -29,6 +29,8 @@ const Accordion = ({ gameID }) => {
         {deals.map((deal) => {
           const dealStoreID = deal.storeID;
           const indexedStoreID = storeData[dealStoreID - 1].storeID;
+          //Conditional to check if storeIDs from Deal data and Store data matches.
+          //If StoreIDs match then array access is used to get the store name.
           if (dealStoreID === indexedStoreID) {
             const storeName = storeData[dealStoreID - 1].storeName;
             return (
@@ -37,6 +39,7 @@ const Accordion = ({ gameID }) => {
                 <td className="text-right">{deal.price}</td>
               </tr>
             );
+          //If StoreIDs do not match then array search is used to get store name.
           } else {
             const store = storeData.find(
               (store) => store.storeID === dealStoreID

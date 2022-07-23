@@ -28,7 +28,9 @@ const Search = () => {
         }}
       >
         <div className="col-sm-10 d-inline-block">
-          <label htmlFor="searchInput" className="visually-hidden">Search field</label>
+          <label htmlFor="searchInput" className="visually-hidden">
+            Search field
+          </label>
           <input
             className="form-control"
             id="searchInput"
@@ -39,7 +41,9 @@ const Search = () => {
           ></input>
         </div>
         <div className="col-sm-2 d-inline-block">
-          <button type="button" className="w-100 btn btn-dark">Submit</button>
+          <button type="button" className="w-100 btn btn-dark">
+            Submit
+          </button>
         </div>
       </form>
       <Results games={games} />
