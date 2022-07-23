@@ -35,11 +35,17 @@ const Accordion = ({ gameID }) => {
             const storeName = storeData[dealStoreID - 1].storeName;
             return (
               <tr key={deal.storeID}>
-                <td>{storeName}</td>
+                <td>
+                  <a 
+                    href={`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`} 
+                    rel="noreferrer"
+                    target="_blank">{storeName}
+                  </a>
+                </td>
                 <td className="text-right">{deal.price}</td>
               </tr>
             );
-          //If StoreIDs do not match then array search is used to get store name.
+            //If StoreIDs do not match then array search is used to get store name.
           } else {
             const store = storeData.find(
               (store) => store.storeID === dealStoreID

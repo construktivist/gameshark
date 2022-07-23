@@ -13,7 +13,7 @@ const ResultRow = ({ data }) => {
     <div className="card col-sm-4 d-flex flex-row">
       <div className="card-body">
         <div className="card-title">{data.external}</div>
-        <div className="card-text">{data.cheapest}</div>
+        <div className="card-text">({data.cheapest} and up)</div>
         <div>
           <button
             className="btn btn-dark"
