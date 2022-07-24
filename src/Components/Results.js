@@ -1,8 +1,18 @@
+import {useState} from "react"
 import ResultRow from "./ResultRow";
 
 //Child component of Search.
 //This component onditionally renders the results based on the props.
 const Results = ({ games }) => {
+
+  //State
+  const [showAccordion, setShowAccordion] = useState('false');
+
+  //Accordion handler
+  function toggleAccordion() {
+    setShowAccordion(showAccordion => !showAccordion)
+  }
+
   if (games === null) {
     return null;
   } else if (games.length === 0) {
@@ -12,7 +22,12 @@ const Results = ({ games }) => {
     <div className="row py-5">
       <div className="row">
         {games.map((game) => {
-          return <ResultRow key={game.gameID} data={game} />;
+          return <ResultRow 
+            key={game.gameID} 
+            data={game} 
+            showAccordion={showAccordion} 
+            toggleAccordion={toggleAccordion} 
+          />;
         })}
       </div>
     </div>
