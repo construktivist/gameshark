@@ -10,7 +10,6 @@ const Results = ({ games }) => {
 
   //Accordion handler
   function toggleAccordion() {
-    setShowAccordion(showAccordion => !showAccordion)
   }
 
   if (games === null) {
