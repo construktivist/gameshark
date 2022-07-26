@@ -36,10 +36,12 @@ const Accordion = ({ gameID }) => {
             return (
               <tr key={deal.storeID}>
                 <td>
-                  <a 
-                    href={`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`} 
+                  <a
+                    href={`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`}
                     rel="noreferrer"
-                    target="_blank">{storeName}
+                    target="_blank"
+                  >
+                    {storeName}
                   </a>
                 </td>
                 <td className="text-right">{deal.price}</td>

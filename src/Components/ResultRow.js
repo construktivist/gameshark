@@ -1,14 +1,9 @@
-import { useState } from "react";
 import Accordion from "./Accordion";
 
 //Mapped child component of Results.
 //This component displays each game and the cheapest deal available.
 //This component also displays a button that expands it's child component Accordion.
-const ResultRow = ({ data, showAccordion, toggleAccordion }) => {
-  //State
-  const [plus, togglePlus] = useState("+");
-  // const [show, toggleShow] = useState(false);
-
+const ResultRow = ({ id, data, showAccordion, toggleAccordion }) => {
   return (
     <div className="card col-sm-4 d-flex flex-row">
       <div className="card-body">
@@ -18,14 +13,13 @@ const ResultRow = ({ data, showAccordion, toggleAccordion }) => {
           <button
             className="btn btn-dark"
             onClick={() => {
-              togglePlus((plus) => (plus === "+" ? "-" : "+"));
-              toggleAccordion();
+              toggleAccordion(id);
             }}
           >
-            {plus}
+            {showAccordion ? "-" : "+"}
           </button>
         </div>
-        {showAccordion === true && <Accordion gameID={data.gameID} />}
+        {showAccordion && <Accordion gameID={data.gameID} />}
       </div>
     </div>
   );
