@@ -5,11 +5,15 @@ import ResultRow from "./ResultRow";
 //This component onditionally renders the results based on the props.
 const Results = ({ games }) => {
   //State
-  const [accordion, setAccordion] = useState();
+  const [accordion, setAccordion] = useState(null);
 
   //Accordion handler
   function toggleAccordion(id) {
-    setAccordion(id);
+    if (accordion === id) {
+      setAccordion(null);
+    } else {
+      setAccordion(id);
+    }
   }
 
   if (games === null) {
