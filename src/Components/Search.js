@@ -21,6 +21,9 @@ const Search = () => {
 
   return (
     <div className="row py-5">
+      <div className="row py-5">
+        <h1>SEARCH FOR DEALS</h1>
+      </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();

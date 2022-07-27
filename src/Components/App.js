@@ -2,7 +2,7 @@ import * as ReactDOMClient from "react-dom/client";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StoreContext from "./StoreContext";
-import AllStores from "./AllStores";
+import Home from "./Home";
 import Search from "./Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -20,7 +20,7 @@ const App = () => {
   async function requestStoreData() {
     const res = await fetch(`https://www.cheapshark.com/api/1.0/stores`);
     const json = await res.json();
-    console.log(json);
+    // console.log(json);
     setStoreData(json);
   }
 
@@ -30,7 +30,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/search" element={<Search />} />
-            <Route path="/" element={<AllStores />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </Router>
       </StoreContext.Provider>
