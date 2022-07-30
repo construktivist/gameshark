@@ -2,7 +2,7 @@ import * as ReactDOMClient from "react-dom/client";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StoreContext from "./StoreContext";
-import Home from "./Home";
+import DealsByStore from "./DealsByStore";
 import Search from "./Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -29,8 +29,8 @@ const App = () => {
       <StoreContext.Provider value={storeData}>
         <Router>
           <Routes>
+            <Route path="/" element={<DealsByStore />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/" element={<Home />} />
           </Routes>
         </Router>
       </StoreContext.Provider>

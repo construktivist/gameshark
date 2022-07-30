@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import TopStoreDeals from "./TopStoreDeals";
 
-const StoreDeals = ({ storeID, storeName }) => {
-  const [storeDeals, setStoreDeals] = useState(null);
+const StoreCards = ({ storeID, storeName }) => {
+  const [deals, setDeals] = useState(null);
 
   useEffect(() => {
     requestGameDealsByStore();
@@ -13,19 +14,23 @@ const StoreDeals = ({ storeID, storeName }) => {
     );
     const json = await res.json();
     console.log(json);
-    setStoreDeals(json);
+    setDeals(json);
   }
 
   return (
     <div className="card">
       <h3>{storeName}</h3>
       <div>
-        {/* {storeDeals.map(deal => {
-
-                })} */}
+        <table>
+          <tbody>
+            {/* {deals.map(game => {
+              <TopStoreDeals game={game} />
+            })} */}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 };
 
-export default StoreDeals;
+export default StoreCards;

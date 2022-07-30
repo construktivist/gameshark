@@ -4,8 +4,7 @@ import StoreCards from "./StoreCards";
 
 //Child of App.
 //Displays each deals for each Store.
-const Home = () => {
-
+const DealsByStore = () => {
   const storeData = useContext(StoreContext);
 
   return (
@@ -29,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DealsByStore;

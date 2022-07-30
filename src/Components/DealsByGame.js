@@ -3,7 +3,7 @@ import Accordion from "./Accordion";
 //Mapped child component of Results.
 //This component displays each game and the cheapest deal available.
 //This component also displays a button that expands it's child component Accordion.
-const ResultRow = ({ id, data, showAccordion, toggleAccordion }) => {
+const DealsByGame = ({ id, data, showAccordion, toggleAccordion }) => {
   return (
     <div className="card col-sm-4 d-flex flex-row">
       <div className="card-body">
@@ -25,4 +25,4 @@ const ResultRow = ({ id, data, showAccordion, toggleAccordion }) => {
   );
 };
 
-export default ResultRow;
+export default DealsByGame;

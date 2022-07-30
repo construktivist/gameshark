@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ResultRow from "./ResultRow";
+import DealsByGame from "./DealsByGame";
 
 //Child component of Search.
 //This component onditionally renders the results based on the props.
@@ -26,7 +26,7 @@ const Results = ({ games }) => {
       <div className="row">
         {games.map((game) => {
           return (
-            <ResultRow
+            <DealsByGame
               key={game.gameID}
               id={game.gameID}
               data={game}
