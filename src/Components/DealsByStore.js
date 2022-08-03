@@ -7,6 +7,27 @@ import StoreCards from "./StoreCards";
 const DealsByStore = () => {
   const storeData = useContext(StoreContext);
 
+  function setFeaturedStores() {
+    const featuredStoresArr = [
+      "Steam",
+      "Humble Store",
+      "GreenManGaming",
+      "GameBillet",
+      "Fanatical",
+      "Gamesplanet",
+      "GOG",
+      "WinGamesStore",
+      "GamersGate",
+    ];
+    const featuredStoreHash = {};
+    featuredStoresArr.forEach((store) => {
+      featuredStoreHash[store] = true;
+    });
+    return featuredStoreHash;
+  }
+
+  const featuredStores = setFeaturedStores();
+
   return (
     <div>
       <div className="row py-5">
@@ -15,13 +36,15 @@ const DealsByStore = () => {
       <div className="row py-5">
         {storeData.length > 0 &&
           storeData.map((store) => {
-            return (
-              <StoreCards
-                key={store.storeID}
-                storeID={store.storeID}
-                storeName={store.storeName}
-              />
-            );
+            if (featuredStores[store.storeName]) {
+              return (
+                <StoreCards
+                  key={store.storeID}
+                  storeID={store.storeID}
+                  storeName={store.storeName}
+                />
+              );
+            }
           })}
       </div>
     </div>
