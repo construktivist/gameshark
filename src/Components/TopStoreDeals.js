@@ -1,7 +1,7 @@
 const TopStoreDeals = ({ game }) => {
   return (
     <tr>
-      <td>{game.name}</td>
+      <td>{game.title}</td>
     </tr>
   );
 };

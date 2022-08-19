@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import TopStoreDeals from "./TopStoreDeals";
 
 const StoreCards = ({ storeID, storeName }) => {
-  const [deals, setDeals] = useState(null);
+  const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    requestGameDealsByStore();
-  }, []);
+    requestGameDealsByStore(storeID);
+  }, [storeID]);
 
-  async function requestGameDealsByStore() {
+  async function requestGameDealsByStore(storeID) {
     const res = await fetch(
       `https://www.cheapshark.com/api/1.0/deals?storeID=${storeID}&pageSize=${7}`
     );
@@ -23,9 +23,13 @@ const StoreCards = ({ storeID, storeName }) => {
       <div>
         <table>
           <tbody>
-            {/* {deals.map(game => {
-              <TopStoreDeals game={game} />
-            })} */}
+            {
+              deals.map((game) => {
+                return (
+                  <TopStoreDeals key={game.gameID} game={game} />
+                )  
+              })
+            }
           </tbody>
         </table>
       </div>
