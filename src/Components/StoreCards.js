@@ -23,16 +23,13 @@ const StoreCards = ({ storeID, storeName }) => {
       <div>
         <table>
           <tbody>
-            {
-              deals.map((game) => {
-                return (
-                  <TopStoreDeals key={game.gameID} game={game} />
-                )  
-              })
-            }
+            {deals.map((game) => {
+              return <TopStoreDeals key={game.gameID} game={game} />;
+            })}
           </tbody>
         </table>
       </div>
+      <a href={`/browse?storeID=${storeID}`}>View All {storeName} Deals</a>
     </div>
   );
 };
