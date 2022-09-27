@@ -1,5 +1,5 @@
 import { useState, useEffect, FunctionComponent } from "react";
-import { GameDealsByStoreAPIResponse, GameDeal } from "../types/GameDealsByStoreAPIResponse";
+import { GameDealsByStoreAPIResponse, GameDeal } from "../types/GameDealsByStoreAPIResponseType";
 import TopStoreDeals from "./TopStoreDeals";
 
 const StoreCards: FunctionComponent<{storeID: string, storeName: string}> = ({ storeID, storeName }) => {

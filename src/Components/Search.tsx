@@ -1,20 +1,21 @@
 import { useState } from "react";
 import Results from "./Results";
+import { GameDealsByKeywordAPIResponse, Games } from "../types/GameDealsByKeywordAPIResponseType"
 
 //Child component of App.
 //Displays a form so users can search for deals by game title.
 const Search = () => {
   //State
   const [searchInput, setSearch] = useState("");
-  const [games, setGames] = useState(null);
+  const [games, setGames] = useState([] as Games[]);
 
   //Fetches game deals based on search keyword.
   //This is called on form submit.
-  async function requestGameDealsByKeyword() {
+  async function requestGameDealsByKeyword(): Promise<void> {
     const res = await fetch(
       `https://www.cheapshark.com/api/1.0/games?title=${searchInput}&limit=60&exact=0`
     );
-    const json = await res.json();
+    const json = (await res.json()) as GameDealsByKeywordAPIResponse["data"];
     console.log(json);
     setGames(json);
   }
@@ -27,7 +28,7 @@ const Search = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          requestGameDealsByKeyword();
+          void requestGameDealsByKeyword();
         }}
       >
         <div className="col-sm-10 d-inline-block">
