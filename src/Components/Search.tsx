@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, FunctionComponent } from "react";
 import Results from "./Results";
-import { GameDealsByKeywordAPIResponse, Games } from "../types/GameDealsByKeywordAPIResponseType"
+import { GameDealsByKeywordAPIResponse, Game } from "../types/GameDealsByKeywordAPIResponseType"
 
 //Child component of App.
 //Displays a form so users can search for deals by game title.
-const Search = () => {
+const Search: FunctionComponent = () => {
   //State
   const [searchInput, setSearch] = useState("");
-  const [games, setGames] = useState([] as Games[]);
+  const [games, setGames] = useState([] as Game[]);
 
   //Fetches game deals based on search keyword.
   //This is called on form submit.

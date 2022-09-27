@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, FunctionComponent } from "react";
 import DealsByGame from "./DealsByGame";
+import { Game } from "../types/GameDealsByKeywordAPIResponseType"
 
 //Child component of Search.
 //This component onditionally renders the results based on the props.
-const Results = ({ games }) => {
+const Results: FunctionComponent<{games: Game[]}> = ({ games }) => {
   //State
-  const [accordion, setAccordion] = useState(null);
+  const [accordion, setAccordion] = useState(null as null | string);
 
   //Accordion handler
-  function toggleAccordion(id) {
+  function toggleAccordion(id: string) {
     if (accordion === id) {
       setAccordion(null);
     } else {

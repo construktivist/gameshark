@@ -1,8 +1,8 @@
 export interface GameDealsByKeywordAPIResponse {
-    data: Games[]
+    data: Game[]
 }
 
-export interface Games {
+export interface Game {
     gameID: string,
     steamAppID: string,
     cheapest: string,
