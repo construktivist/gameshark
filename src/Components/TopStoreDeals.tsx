@@ -1,4 +1,13 @@
-const TopStoreDeals = ({ game }) => {
+import { FunctionComponent } from 'react';
+
+interface IProps {
+  title: string,
+  normalPrice: string,
+  dealID: string,
+  salePrice: string
+}
+
+const TopStoreDeals: FunctionComponent<IProps> = (game) => {
   const { title, normalPrice, dealID, salePrice } = game;
   return (
     <tr>
