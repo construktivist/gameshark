@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, FunctionComponent } from "react";
 import StoreContext from "./StoreContext";
 
 //Child component of ResultRow.
 //This component expands to show all available deals by store.
-const Accordion = ({ gameID }) => {
+const Accordion: FunctionComponent<{gameID: string}> = ({ gameID }) => {
   //State
   const [deals, setDeals] = useState([]);
   const [...storeData] = useContext(StoreContext);
@@ -18,7 +18,7 @@ const Accordion = ({ gameID }) => {
     const res = await fetch(
       `https://www.cheapshark.com/api/1.0/games?id=${gameID}`
     );
-    const json = await res.json();
+    const json = (await res.json()) as GameDealsByGameIDAPIResponseType;
     console.log(json);
     setDeals(json.deals);
   }
